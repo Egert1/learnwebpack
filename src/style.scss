@@ -1,0 +1,5 @@
+$logcolor: coral;
+
+html, body {
+    background-color: lighten($color: coral, $amount: 30%);
+}
