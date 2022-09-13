@@ -3,12 +3,20 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const glob = require('glob');
 
-glob('./src/views/*.html', (error, files) => {
+let htmlPlugins = [];
+
+let files = glob.sync('./src/views/*.html', (error, files) => {
   if(error){
     console.log(error);
   }
-  console.log(files);
-})
+  files.forEach(file => {
+    let htmlPlugin = new HtmlWebpackPlugin({
+      filename: file.split('/').at(-1),
+      template: file
+    });
+    htmlPlugins.push(htmlPlugin);
+  });
+});
 
 module.exports = {
   entry: './src/index.js',
@@ -36,17 +44,7 @@ module.exports = {
     ],
   },
   plugins: [
-      new HtmlWebpackPlugin({
-        template: './src/index.html'
-      }),
-      new HtmlWebpackPlugin({
-        filename: 'about.html',
-        template: './src/about.html'
-      }),
-      new HtmlWebpackPlugin({
-        filename: 'contacts.html',
-        template: './src/contacts.html'
-      }),
+        ...htmlPlugins,
       new MiniCssExtractPlugin(),
     ],
 };
