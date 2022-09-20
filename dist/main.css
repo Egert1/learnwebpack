@@ -1,6 +1,1 @@
-/*!*********************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/style.scss ***!
-  \*********************************************************************************************************/
-html, body {
-  background-color: #ffefe9;
-}
+html,body{background-color:#ffefe9}

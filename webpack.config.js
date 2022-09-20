@@ -2,6 +2,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const glob = require('glob');
+const PurgecssPlugin = require('purgecss-webpack-plugin')
 
 let htmlPlugins = [];
 
@@ -13,6 +14,10 @@ let files = glob.sync('./src/views/*.twig');
     });
     htmlPlugins.push(htmlPlugin);
   });
+
+  const PATHS = {
+    src: path.join(__dirname, 'src/views')
+  }
 
 
 module.exports = {
@@ -52,5 +57,8 @@ module.exports = {
   plugins: [
         ...htmlPlugins,
       new MiniCssExtractPlugin(),
+      new PurgecssPlugin.PurgeCSSPlugin({
+        paths: glob.sync(`${PATHS.src}/**/*`,  { nodir: true }),
+      }),
     ],
 };
