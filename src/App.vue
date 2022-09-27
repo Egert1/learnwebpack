@@ -1,21 +1,18 @@
 <template>
-
-<input type="text" v-model="name">
-<button class="button" @click="count++">{{ count }}</button>
-{{ name }}
-<ul>
-    <li v-for="(item,index) in items" :key="index" {{ item }}></li>
-</ul>
+    <tabs :links="$router.getRoutes()" :current="$route.path"></tabs>
+    <div class="container">
+        <section class="section">
+  <router-view> </router-view>
+        </section>
+    </div>
 </template>
 
 <script>
+import Tabs from './components/Tabs.vue'
 export default {
-    data(){
-        return {
-            name: 'Egert',
-            count: 0,
-            items: ['piim','sai','liha']
-        }
+    components: { Tabs },
+    created(){
+        console.log(this.$router.getRoutes())
     }
 }
 </script>
