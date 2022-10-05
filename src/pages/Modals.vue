@@ -13,6 +13,7 @@
   </template>
 
 <script>
+import ImgModal from '../components/ImgModal.vue'
 import Modal from '../components/Modal.vue'
 export default {
     components: { Modal, ImgModal },

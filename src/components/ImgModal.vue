@@ -1,13 +1,20 @@
 <template>
-  <div class="modal" :class="{'is-active': active}">
-  <div class="modal-background" @click="$emit('close')"></div>
-  <div class="image is-4by3"
+            <modal @click="$emit('close')">
+                    <p class="image is-4by3">
+                        <img :src="src" alt="">
+                    </p>
+            </modal>
 </template>
 
 <script>
+import Modal from './Modal.vue'
 export default {
-    components: {Modal},
-    props:['active', 'src']
+  components: { Modal },
+  props: [ 'src']
+
 }
 </script>
 
+<style>
+
+</style>
