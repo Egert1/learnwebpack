@@ -30,7 +30,7 @@ mounted(){
         data(NewData, oldData){
             console.log(this.chart.data.datasets[0].data);
             this.chart.data.datasets[0].data = NewData;
-            this.chart.draw();
+            this.chart.update();
         }
     }
 }
