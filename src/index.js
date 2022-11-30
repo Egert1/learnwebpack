@@ -21,7 +21,7 @@ const routes = [
   { path: '/', component: Chat, name: 'Chat'},
     { path: '/', component: Game, name: 'Game'},
     { path: '/corona', component: Corona, name: 'Corona' },
-    { path: '/map', component: GoogleMap, name: 'Map' },
+    { path: '/map', component: Map, name: 'Map' },
     { path: '/countries/:country', component: Country },
     { path: '/rickandmorty', component: RickAndMorty, name: 'Rick and Morty' },
     { path: '/chuck', component: Chuck, name: 'Chuck' },

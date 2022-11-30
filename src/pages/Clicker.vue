@@ -13,6 +13,7 @@
            <button @click="upgrade(100, 10000)" class="button is-primary" :disabled="cookies<10000">Buy 100 cps for 10000 cookies</button>
             <button @click="upgrade(1000, 100000)" class="button is-primary" :disabled="cookies<100000">Buy 1000 cps for 100000 cookies</button>
              <button @click="upgrade(10000, 1000000)" class="button is-primary" :disabled="cookies<1000000">Buy 10000 cps for 1000000 cookies</button>
+              <button @click="upgrade(1000000)" class="button is-danger" :disabled="cookies<25000000">Buy Pear Upgrade for 25000000 cookies</button>
     </div>
   </div>
 </template>

@@ -9,7 +9,7 @@ import { shallowRef } from 'vue';
 export default {
     mounted(){
         const loader = new Loader({
-            apiKey: "AIzaSyCFZquZ6fD9XiCi_1Pv9KVBhu5Qj8ukpy4",
+            apiKey: "",
             version: "weekly"
         });
         loader.load().then(() => {
